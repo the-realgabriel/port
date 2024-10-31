@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<section class="home">
+    <div class= "home-content">
+{% for name in names %} 
+    <h1>Hello I'm {{name.name}}</h1>
+    {% endfor %}
+
+ 
+   {% for body  in bodies %}
+   <h2>{{body.description}}</h2>
+
+    {%empty%}
+    <h2>Game Developer</h2>
+   {% endfor %}
+  
+   {% for about in about %}
+    <p>{{about.description}}</p>
+   {% endfor %}
+
+        <div class= "btn">
+            <a href="https://mail.google.com/mail/u/0/#sent?compose=GTvVlcSBptMkWdFGSpflDwXnJFFhCkPCWBCmpxzCtJRDTFmHHJCjrpVBgmgZvFCCwGdMjdpkccvkB"><button>Let's Talk</button></a>
+    
+        </div>    
+    </div>
+
+</section> 
+ 
+{% endblock %}

@@ -1,0 +1,208 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #4801ff;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    
+    padding: 1em;
+    display: flex;
+    justify-content: space-between; /* Align logo and nav to edges */
+    align-items: center; /* Vertically center content */
+  }
+  
+  header a {
+    text-decoration: none;
+    color: #000000; /* Example color */
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange list items horizontally */
+  }
+  
+  nav li {
+    margin-left: 20px; /* Space between list items */
+  }
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed; /* Keep the footer at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* Game Dev Specific Styling */
+.project {
+    background-color: #fff;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.project h2 {
+    color: #333;
+}
+
+.project p {
+    margin-bottom: 0.5rem;
+}
+
+/* Optional: Add a hover effect to projects */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+}
+
+.home{
+    height:40vh; 
+    background: url() no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+}
+
+.home-content{
+    max-width: 37.5rem;
+}
+
+.home-content h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.home-content h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content .btn{
+    width: 9.4rem;
+    height: 3.5rem;
+}
+
+.btn a{
+    display: inline-flex;
+    width: 6.5rem;
+    height: 50%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    align-items: center;
+}
+
+
+  
+  /* Gallery Item */
+  .gallery-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.2s ease; /* Add a hover transition */
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+  }
+  
+  /* Image Styling */
+  .gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Add rounded corners to images */
+  }
+  
+  /* Video Styling */
+  .gallery-item video {
+    width: 100%;
+    max-width: 1080px; 
+    height: auto;
+    border-radius: 5px; /* Add rounded corners to videos */
+  }
+  
+  /* Title Styling */
+  .gallery-item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  
+
+/* Responsive Design - Media Queries */
+
+@media (max-width: 768px) { /* Styles for tablets and smaller */
+
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        text-align: center; /* Center content */
+      }
+    
+      nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        margin-top: 10px; /* Add space above nav */
+      }
+    
+      nav li {
+        margin: 5px 0; /* Space between vertical nav items */
+      }
+
+    main {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .project {
+        margin-bottom: 1.5rem; /* Reduce spacing between projects */
+    }
+  
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns on mobile */
+    }
+  
+    /* Video Styling */
+    .gallery-item video {
+      max-width: 100%; /* Videos take full width on mobile */
+    }
+  
+  
+}
+
+@media (max-width: 576px) { /* Styles for mobile phones */
+    header h1 {
+        font-size: 1.5rem; /* Reduce header font size */
+    }
+
+    .project h2 {
+        font-size: 1.2rem; /* Reduce project title font size */
+    }
+}

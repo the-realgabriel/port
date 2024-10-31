@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="gallery"> 
+    {% for media in media_items %}
+    <div class="gallery-item">
+        {% if media.media_type == 'image' %}
+            <img src="{{ media.image.url }}" alt="{{ media.title }}">
+        {% endif %}
+        <h3>{{ media.title }}</h3>
+        <p>{{ media.description }}</p>
+
+        {% if media.video %}
+                    <!-- Display video with autoplay and muted for compatibility -->
+                    <video width="800" height="800" autoplay muted controls>
+                        <source src="{{ media.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+    {% endif %}
+    </div>
+    {% endfor %}
+</div> 
+{% endblock %}
+
+<script>
+    // JavaScript to auto-pause videos when they leave the viewport
+    document.addEventListener("DOMContentLoaded", function() {
+        const videos = document.querySelectorAll("video");
+
+        // Create an intersection observer to observe visibility changes
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play();  // Play the video when in view
+                } else {
+                    video.pause(); // Pause the video when out of view
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the video is in view
+        });
+
+        // Observe each video element
+        videos.forEach(video => observer.observe(video));
+    });
+</script>
